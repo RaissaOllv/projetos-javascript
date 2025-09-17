@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro de Fornecedores</title>
+  <link rel="stylesheet" href="css/fornecedores.css" />
+</head>
+<body>
+  <nav class="nav-lateral">
+    <ul>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="produtos.html">Produtos</a></li>
+      <li><a href="estoque.html">Estoque</a></li>
+      <li><a href="vendas.html">Vendas</a></li>
+      <li class="ativo"><a href="fornecedores.html">Fornecedores</a></li>
+    </ul>
+  </nav>
+
+  <main class="conteudo">
+   <form class="form-produto" id="formFornecedor">
+  <section>
+    <h3>Cadastro de Fornecedor</h3>
+    <div class="grupo">
+      <input type="text" id="nomeFornecedor" placeholder="Nome do Fornecedor" required />
+      <input type="text" id="telefoneFornecedor" placeholder="Telefone" required />
+      <input type="email" id="emailFornecedor" placeholder="E-mail" required />
+      <input type="text" id="enderecoFornecedor" placeholder="Endereço" required />
+      <input type="text" id="cnpjFornecedor" placeholder="CNPJ" required />
+    </div>
+  </section>
+  <button type="submit" class="button btn" id="btnSalvarFornecedor">Cadastrar</button>
+</form>
+
+
+    <!-- Botão para mostrar/ocultar lista de fornecedores -->
+    <button class="btn toggle-lista" id="btnToggleListaFornecedores" style="margin: 1.5rem 0;">
+      Mostrar Fornecedores Cadastrados
+    </button>
+
+    <!-- Campo de pesquisa -->
+    <div style="margin-bottom: 1.5rem;">
+      <input type="text" id="pesquisa-fornecedor" placeholder="Pesquisar por nome ou produto..." style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #ccc;" />
+    </div>
+
+    <!-- Lista de fornecedores -->
+    <div id="fornecedores-container" class="lista-container" style="display: none;">
+      <ul id="lista-fornecedores">
+        <!-- JS insere os cards aqui -->
+      </ul>
+    </div>
+
+    <!-- Paginação -->
+    <div id="paginacao" style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 8px;"></div>
+  </main>
+
+  <script src="js/fornecedores.js"></script>
+
+  <script>
+    // Toggle para mostrar/ocultar lista de fornecedores
+    const btnToggleLista = document.getElementById('btnToggleListaFornecedores');
+    const fornecedoresContainer = document.getElementById('fornecedores-container');
+
+    btnToggleLista.addEventListener('click', () => {
+      const isVisivel = fornecedoresContainer.style.display === 'block';
+      fornecedoresContainer.style.display = isVisivel ? 'none' : 'block';
+      btnToggleLista.textContent = isVisivel ? 'Mostrar Fornecedores Cadastrados' : 'Ocultar Fornecedores Cadastrados';
+    });
+  </script>
+</body>
+</html>

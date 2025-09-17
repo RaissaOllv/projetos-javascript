@@ -1,0 +1,14 @@
+Cor de fundo: #f0f2f5
+
+Cor de fundo da navbar: #f5f5f5
+Cor do da pagina ativa do navbar: #2fa03e
+
+Cor do botão: #2fa03e
+Cor do botão:hover: #37bb48
+Cor do texto do botão: #ffffff
+Cor do botão outline: #2fa03e
+Cor de fundo do botão outline: #e9f0ff
+
+Cor do texto da pagina: #333
+Cor do input e do select: #ccc
+Cor dos titulos (h): #777

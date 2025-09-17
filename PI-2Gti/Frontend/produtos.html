@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastro de Produtos</title>
+  <link rel="stylesheet" href="css/produtos.css" />
+</head>
+<body>
+  <nav class="nav-lateral">
+    <ul>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li class="ativo"><a href="produtos.html">Produtos</a></li>
+      <li><a href="estoque.html">Estoque</a></li>
+      <li><a href="vendas.html">Vendas</a></li>
+      <li><a href="fornecedores.html">Fornecedores</a></li>
+    </ul>
+  </nav>
+
+  <main class="conteudo">
+    <form class="form-produto" id="formProduto">
+      <input type="hidden" id="idProduto" />
+
+      <section>
+        <h3>Dados básicos</h3>
+        <div class="grupo">
+          <input type="text" id="nomeProduto" placeholder="Nome do produto" required />
+          <input type="text" id="codInternoProduto" placeholder="Cod. interno" />
+          <select id="categoriaProduto" required>
+            <option disabled selected value="">Categoria</option>
+          </select>
+          <select id="fornecedorProduto" required>
+            <option disabled selected value="">Fornecedor</option>
+          </select>
+        </div>
+        <div class="grupo">
+          <input type="text" id="codBarrasProduto" placeholder="Cod. de barras" required />
+        </div>
+      </section>
+
+      <section>
+        <h3>Formação de preço</h3>
+        <div class="grupo">
+          <input type="number" id="custoLiquidoProduto" placeholder="Custo Líquido" step="0.01" required />
+          <input type="number" id="custoBrutoProduto" placeholder="Custo Bruto" step="0.01" required />
+          <input type="number" id="precoVendaProduto" placeholder="Preço de venda" step="0.01" required />
+          <input type="text" id="lucroProduto" placeholder="Taxa de Lucro %" readonly />
+        </div>
+      </section>
+
+      <section>
+        <h3>Unidade</h3>
+        <div class="grupo">
+          <select id="unidadeVendaSelect" required>
+            <option disabled selected value="">Unidade de venda</option>
+            <option value="Unidade">Unidade</option>
+            <option value="Pacote">Pacote</option>
+            <option value="Caixa">Caixa</option>
+            <option value="Litro">Litro</option>
+            <option value="Quilo">Quilo</option>
+          </select>
+        </div>
+      </section>
+
+      <section>
+        <h3>Dados fiscais</h3>
+        <div class="grupo">
+          <input type="text" id="icmsProduto" placeholder="Origem ICMS" required />
+          <input type="text" id="ncmProduto" placeholder="NCM" required />
+        </div>
+      </section>
+
+      <button type="submit" class="btn" id="btnSalvar">Cadastrar</button>
+    </form>
+
+    <button class="btn toggle-lista" id="btnToggleLista" style="margin-top: 1.5rem;">
+      Mostrar Produtos Cadastrados
+    </button>
+
+    <div class="grupo" style="margin-top: 1rem;">
+      <input type="text" id="pesquisaProduto" placeholder="Pesquisar por nome ou código de barras..." />
+    </div>
+
+    <div id="produtos-container" style="display: none;">
+      <ul class="lista-produtos" id="lista-produtos"></ul>
+    </div>
+
+    <div id="paginacao" style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 4px;"></div>
+  </main>
+
+  <script src="js/produtos.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Histórico de Vendas</title>
+  <link rel="stylesheet" href="css/vendas-historico.css">
+</head>
+
+<body>
+
+  <nav class="nav-lateral">
+    <ul>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="produtos.html">Produtos</a></li>
+      <li><a href="estoque.html">Estoque</a></li>
+      <li class=ativo><a href="vendas.html">Vendas</a></li>
+      <li><a href="fornecedores.html">Fornecedores</a></li>
+    </ul>
+  </nav>
+
+  <!-- Conteúdo Principal -->
+  <main class="conteudo">
+    <!-- Botões de topo -->
+    <div class="top-buttons">
+      <a class="button btn" href="vendas.html">Registrar</a>
+      <a class="button btn-outline" href="vendas-historico.html">Histórico</a>
+    </div>
+
+    <h2>Histórico de Vendas</h2>
+
+    <!-- Filtros -->
+    <div class="filters">
+      <input type="text" placeholder="Buscar...">
+      <select>
+        <option>Forma de pagamento</option>
+        <option>Dinheiro</option>
+        <option>Cartão de Débito</option>
+        <option>Cartão de Crédito</option>
+        <option>Voucher</option>
+        <option>Pix</option>
+      </select>
+
+      <div class="date-filters">
+        <label for="data-inicial">De:</label>
+        <input type="date" id="data-inicial">
+        <label for="data-final">Até:</label>
+        <input type="date" id="data-final">
+      </div>
+
+      <button class="button btn">Filtrar</button>
+    </div>
+
+    <!-- Tabela -->
+    <div class="tabela-responsiva">
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Valor</th>
+            <th>Forma de Pagamento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>20/05/2025</td>
+            <td>Teclado Gamer</td>
+            <td>2</td>
+            <td>R$ 300,00</td>
+            <td>Cartão</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+</body>
+
+</html>

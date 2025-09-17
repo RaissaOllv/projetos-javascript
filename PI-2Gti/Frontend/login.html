@@ -1,0 +1,47 @@
+g<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<!-- Modal de erro -->
+<div id="modalErro" class="modal">
+    <div class="modal-conteudo">
+        <span class="fechar" onclick="fecharModal()">&times;</span>
+        <p>Usuário ou senha incorretos!</p>
+    </div>
+</div>
+
+<body>
+
+    <div class="container">
+        <div class="logo-container">
+            <img src="img/logo.jpeg" alt="Logo NexusTech" class="logo">
+        </div>
+
+       <form id="formLogin" class="login-form">
+        <div class="input-area">
+            <i class="fa fa-user"></i>
+            <input type="text" id="usuario" placeholder="Usuário" required>
+        </div>
+
+        <div class="input-area">
+            <i class="fa fa-lock"></i>
+            <input type="password" id="senha" placeholder="Senha" required>
+        </div>
+
+  <button type="submit" class="btn">Entrar</button>
+</form>
+
+
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+
+</html>

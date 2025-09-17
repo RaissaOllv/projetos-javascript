@@ -1,0 +1,246 @@
+/* RESET E BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  height: 100vh;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* NAVEGAÇÃO LATERAL */
+.nav-lateral {
+  width: 200px;
+  height: 100vh;
+  background-color: #fff;
+  padding-top: 2rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
+}
+
+.nav-lateral ul {
+  list-style: none;
+}
+
+.nav-lateral li {
+  padding: 12px 20px;
+  color: #333;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.nav-lateral li:hover {
+  background-color: #f5f5f5;
+}
+
+.nav-lateral li.ativo {
+  font-weight: bold;
+  color: #2fa03e;
+}
+
+.nav-lateral li.ativo::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background-color: #2fa03e;
+  border-radius: 2px;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.conteudo {
+  flex: 1;
+  padding: 2rem;
+  height: 100vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* BOTÕES */
+button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+}
+
+.btn {
+  background-color: #2fa03e;
+  color: #fff;
+}
+
+.btn:hover {
+  background-color: #37bb48;
+}
+
+.btn-outline {
+ border: 1px solid #2fa03e;
+  color: #2fa03e;
+  background-color: transparent;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+ background-color: #2fa03e;
+  color: white;
+}
+
+/* FORMULÁRIO */
+.form-produto fieldset {
+  border: none;
+  margin-bottom: 2rem;
+}
+
+.form-produto h3 {
+  color: #777;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.grupo {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+input,
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1;
+  min-width: 150px;
+}
+
+/* LISTA DE PRODUTOS */
+#lista-produtos {
+  list-style: none;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 0;
+}
+
+#lista-produtos li {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+#lista-produtos li .acoes {
+  margin-top: auto;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+#lista-produtos li button.btn-editar {
+  background-color: #007bff;
+  color: #fff;
+}
+
+#lista-produtos li button.btn-editar:hover {
+  background-color: #0056b3;
+}
+
+#lista-produtos li button.btn-excluir {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+#lista-produtos li button.btn-excluir:hover {
+  background-color: #a71d2a;
+}
+
+/* PAGINAÇÃO */
+#paginacao {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+#paginacao .btn-outline {
+  min-width: 36px;
+}
+
+/* RESPONSIVIDADE */
+@media screen and (max-width: 768px) {
+  body {
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+  }
+
+  .nav-lateral {
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+    border-bottom: 1px solid #ccc;
+    padding: 0;
+    position: relative;
+  }
+
+  .nav-lateral ul {
+    display: flex;
+    overflow-x: auto;
+    padding: 0.5rem;
+  }
+
+  .nav-lateral li {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .conteudo {
+    padding: 1.5rem 1rem;
+    height: auto;
+    overflow: visible;
+  }
+
+  .grupo {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  input,
+  select,
+  button {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #lista-produtos {
+    grid-template-columns: 1fr;
+  }
+}
