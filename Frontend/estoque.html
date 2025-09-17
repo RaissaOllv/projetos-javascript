@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Entrada de Estoque</title>
+  <link rel="stylesheet" href="css/estoque.css" />
+</head>
+
+<body>
+  <div class="layout">
+    <!-- Menu Lateral -->
+    <nav class="nav-lateral">
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li class="ativo"><a href="estoque.html">Estoque</a></li>
+        <li><a href="vendas.html">Vendas</a></li>
+        <li><a href="fornecedores.html">Fornecedores</a></li>
+      </ul>
+    </nav>
+
+    <main class="conteudo">
+      <h1>Entrada de Estoque</h1>
+
+      <form class="formulario" id="form-entrada-estoque" autocomplete="off">
+        <div class="linha">
+          <!-- Campo autocomplete para produto -->
+          <div class="autocomplete-container" style="flex:1; min-width:150px; position: relative;">
+            <input
+              type="text"
+              id="input-produto"
+              placeholder="Digite o nome do produto"
+              required
+              autocomplete="off"
+              data-produto-id=""
+            />
+            <div id="lista-sugestoes" class="lista-sugestoes"></div>
+          </div>
+
+          <input
+            type="number"
+            id="input-qtd"
+            placeholder="Qtd adicionada"
+            class="input-text"
+            min="1"
+            required
+          />
+
+          <label for="input-data-entrada">Entrada:</label>
+          <input type="date" id="input-data-entrada" class="input-data" required />
+        </div>
+
+        <div class="linha">
+          <input
+            type="number"
+            step="0.01"
+            id="input-custo"
+            placeholder="Custo da compra"
+            class="input-text"
+            required
+          />
+
+          <input
+            type="text"
+            id="input-lote"
+            placeholder="Número do lote"
+            class="input-text"
+            required
+          />
+
+          <label for="input-data-vencimento">Vencimento:</label>
+          <input type="date" id="input-data-vencimento" class="input-data" required />
+        </div>
+
+        <div class="linha">
+          <textarea
+            id="textarea-obs"
+            placeholder="Observações"
+            class="textarea"
+          ></textarea>
+        </div>
+
+        <div class="linha">
+          <button type="submit" class="btn">Salvar</button>
+        </div>
+      </form>
+
+      <!-- Lista de estoque em cards -->
+      <section id="lista-estoque-container">
+        <h2>Estoque Atual</h2>
+        <ul id="lista-estoque">
+          <!-- Os cards serão inseridos aqui pelo JS -->
+        </ul>
+
+        <!-- Paginação -->
+        <div class="paginacao" id="paginacao">
+          <!-- Botões de página serão inseridos aqui pelo JS -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/estoque.js"></script>
+</body>
+
+</html>

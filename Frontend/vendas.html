@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Vendas</title>
+  <link rel="stylesheet" href="css/vendas.css">
+</head>
+
+<body>
+  <nav class="nav-lateral">
+    <ul>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="produtos.html">Produtos</a></li>
+      <li><a href="estoque.html">Estoque</a></li>
+      <li class=ativo><a href="vendas.html">Vendas</a></li>
+      <li><a href="fornecedores.html">Fornecedores</a></li>
+    </ul>
+  </nav>
+
+  <main class="conteudo">
+    <div class="top-buttons">
+      <a class="button btn" href="vendas.html">Registrar</a>
+      <a class="button btn-outline" href="vendas-historico.html">Histórico</a>
+    </div>
+
+    <form class="form-vendas">
+      <section>
+        <h3>Registrar Venda</h3>
+        <div class="grupo">
+          <input type="text" placeholder="Produto">
+          <input type="number" placeholder="Quantidade">
+          <input type="number" placeholder="Preço unitário">
+        </div>
+        <div class="venda-info">
+          <div><strong>Data:</strong> 24/04/2025</div>
+          <div><strong>Hora:</strong> 13:05</div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Total da venda</h3>
+        <div class="venda-totais">
+          <div>
+            <strong>Subtotal</strong>
+            <p>R$ 0,00</p>
+          </div>
+        </div>
+        <hr>
+        <div class="total-final">
+          <strong>Total</strong>
+          <span>R$ 0,00</span>
+        </div>
+        <div class="adicionar-item">
+          <label for="pagamento">Adicionar item</label>
+          <select id="pagamento">
+            <option>Forma de pagamento</option>
+            <option>Dinheiro</option>
+            <option>Cartão de Débito</option>
+            <option>Cartão de Crédito</option>
+            <option>Voucher</option>
+            <option>Pix</option>
+          </select>
+        </div>
+        <button type="submit" class="button btn">Finalizar </button>
+      </section>
+    </form>
+  </main>
+</body>
+
+</html>
